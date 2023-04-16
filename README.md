@@ -1,4 +1,4 @@
-# Atividade 1 de Engenharia da Computação
+# Atividade 1 da disciplina de Engenharia de Software
 (Assignment  #1) - "Chamada de alunos descomplicada "
 Proposta de solução para uma versão eletrônica e colaborativa/descentralizada da chamada de presença.
 
