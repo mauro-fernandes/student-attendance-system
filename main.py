@@ -5,14 +5,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/hello')
-def hello_world():
-    #return 'Hello, World!'
-    return "<p>Hello, World!!!</p>"
 
-@app.route('/')
-def index():
-    return 'Index Page'
 
 
 
@@ -22,6 +15,8 @@ from markupsafe import escape
 #def show_user_profile(username):
 #    # show the user profile for that user
 #    return f'User {escape(username)}'
+
+
 
 @app.route('/post/<int:post_id>')
 def show_post(post_id):
@@ -45,8 +40,6 @@ def login():
 
 
 
-
-
 from flask import render_template
 @app.route('/hello/')
 @app.route('/hello/<name>')
@@ -60,13 +53,17 @@ def contatos():
 
 @app.route('/homepage/')
 def homepage():
-    return render_template('homepage.html')
+    return render_template('index.html')
+
+
 
 @app.route('/user/<username>')
 def profile(username):
     return render_template('usuarios.html', username=username)
 
-
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 
