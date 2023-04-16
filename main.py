@@ -35,21 +35,49 @@ def show_subpath(subpath):
 
 
 
-from flask import url_for
+
 
 @app.route('/login')
 def login():
     return 'login'
 
+
+
+
+
+
+
+from flask import render_template
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', name=name)
+
+
+@app.route('/contatos')
+def contatos():
+    return render_template('contatos.html')
+
+@app.route('/homepage/')
+def homepage():
+    return render_template('homepage.html')
+
 @app.route('/user/<username>')
 def profile(username):
-    return f'{username}\'s profile'
+    return render_template('usuarios.html', username=username)
 
+
+
+
+
+
+from flask import url_for
 with app.test_request_context():
     print(url_for('index'))
     print(url_for('login'))
     print(url_for('login', next='/'))
     print(url_for('profile', username='John Doe'))
+
 
 
 
@@ -74,17 +102,12 @@ def login_post():
 '''
 
 
-from flask import render_template
-
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('hello.html', name=name)
 
 
 
 
 
 
-#app.run(host='0.0.0.0', port=8080)
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8080, debug=True)
+    #app.run(debug=True)
