@@ -32,12 +32,6 @@ def show_subpath(subpath):
 
 
 
-@app.route('/login')
-def login():
-    return 'login'
-
-
-
 
 
 from flask import render_template
@@ -69,7 +63,7 @@ def about():
 
 
 
-
+'''
 from flask import url_for
 with app.test_request_context():
     print(url_for('index'))
@@ -77,11 +71,11 @@ with app.test_request_context():
     print(url_for('login', next='/'))
     print(url_for('profile', username='John Doe'))
 
-
+'''
 
 
 #########################
-'''
+
 from flask import request
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -98,10 +92,13 @@ def login_get():
 @app.post('/login')
 def login_post():
     return do_the_login()
-'''
 
 
+def do_the_login():
+    return 'do_the_login'
 
+def show_the_login_form():
+    return 'show_the_login_form'
 
 
 
