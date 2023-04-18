@@ -40,7 +40,10 @@ def about():
     return render_template('about.html')
 
 
-
+@app.route('/result')
+def result():
+   dict = {'phy':50,'che':60,'maths':70}
+   return render_template('result.html', result = dict)
 
 from markupsafe import escape
 
@@ -49,18 +52,6 @@ from markupsafe import escape
 #    # show the user profile for that user
 #    return f'User {escape(username)}'
 
-
-
-
-'''
-from flask import url_for
-with app.test_request_context():
-    print(url_for('index'))
-    print(url_for('login'))
-    print(url_for('login', next='/'))
-    print(url_for('profile', username='John Doe'))
-
-'''
 
 
 #########################
@@ -89,3 +80,14 @@ def do_the_login():
 def show_the_login_form():
     return 'show_the_login_form'
 
+#########################
+from flask import url_for
+with app.test_request_context():
+    print(url_for('index'))
+    print(url_for('homepage'))
+    print(url_for('login'))
+    print(url_for('login', next='/'))
+    print(url_for('profile', username='John Doe'))
+    print(url_for('hello', username='John Doe'))
+    print(url_for('show_post', post_id='1'))
+    

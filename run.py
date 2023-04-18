@@ -1,4 +1,7 @@
-from app import app
+from app import app                 #    app is a Flask instance object
+
+
+
 
 
 if __name__ == "__main__":
