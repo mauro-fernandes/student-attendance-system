@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<!-- Path: app/templates/base.html -->
+<html>
+<head>
+    <title>{% block title %}Flaskr{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+    <div class="page">
+        <h1>Flaskr</h1>
+
+        <div class="metanav">
+            {% if not session.logged_in %}
+                <a href="{{ url_for('login') }}">log in</a>
+            {% else %}
+                <a href="{{ url_for('logout') }}">log out</a>
+            {% endif %}
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div class="container">
+        <-- Conteúdo aqui ->
+        Get started with Bootstrap. <p></p>
+        Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.
+
+    </div>
+</body>
+
+
+</html>

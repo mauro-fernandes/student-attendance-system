@@ -216,3 +216,5 @@ node_modules/
 # Ignore all files in the .cache directory
 .cache/
 
+# DB browser porject file
+*.sqbpro
